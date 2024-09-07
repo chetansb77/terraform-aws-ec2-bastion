@@ -34,7 +34,7 @@ This Terraform script will create the following resources:
 
 2. **Update variables**:\
   Open the `variables.tf` files and update the default values if needed.
-  To identify all the awailable variables for each resources, visit each modules `variable.tf` files.
+  To identify all the available variables for each resources, visit each modules `variable.tf` files.
 
 3. **Initialize Terraform**:\
   Run the following command to initialize Terraform, which downloads the required providers:

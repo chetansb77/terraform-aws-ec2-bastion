@@ -36,28 +36,32 @@ This Terraform script will create the following resources:
   Open the `variables.tf` files and update the default values if needed.
   To identify all the available variables for each resources, visit each modules `variable.tf` files.
 
-3. **Initialize Terraform**:\
+3. **Create an EC2 key-pair**:\
+  Create a new key pair of type RSA from the aws console download the .pem file.
+  Either have the name of the key-pair as `tf_practice` or overide the global key name variable in ec2 module with the required name
+
+4. **Initialize Terraform**:\
   Run the following command to initialize Terraform, which downloads the required providers:
 
     ```bash
     terraform init
     ```
 
-4. **Plan the infrastructure**:\
+5. **Plan the infrastructure**:\
   You can preview the resources that will be created using the `terraform plan` command:
 
     ```bash
-    terraform plan
+    terraform plan -out tf.plan
     ```
 
-5. **Apply the configuration**:\
+6. **Apply the configuration**:\
   Apply the Terraform script to create the resources on AWS:
 
     ```bash
-    terraform apply
+    terraform apply "tf.plan"
     ```
 
-6. **Access the Bastion Server**:\
+7. **Access the Bastion Server**:\
   Once the EC2 bastion server is created, you can SSH into it using the public IP address and your key pair:
 
     ```bash
